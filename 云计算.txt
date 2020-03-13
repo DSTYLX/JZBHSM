@@ -1,0 +1,52 @@
+更新
+yum group
+安装组软件包
+yum groupinstall "Virtualization Host" -y
+装界面
+yum groupinstall "X Window System" 
+yum grouplist
+yum groupinstall "GNOME Desktop" "Graphical Administration Tools"
+安装aircrack-ng
+wget http://www.dutycode.com/downloads/aircrack-ng-1.2-beta1.tar.gz
+yum install openssl-devel
+tar -zxvf aircrack-ng-1.2-beta1.tar.gz && cd aircrack-ng-1.2-beta1
+make
+make install
+python生成字典
+import itertools as its
+words="0123456789abcdefghijklmnopqrstuvwxyz" 
+ dic=open('dictionary.txt','w')
+ for num in range(8,11)://长度为8~10位数
+     keys=its.product(words,repeat=num)
+     for key in keys:
+         dic.write("".join(key)+"\n")
+ dic.close()
+执行
+aircrack-ng  -a2 -b 24:69:68:6A:06:50 -w naive-hashcatrockyou.txt Desktop-01.cap
+
+
+
+
+
+
+
+
+
+
+1.云计算的定义是什么？
+      云计算是一种模型，它支持对共享的可配置计算资源
+      (例如，网络、服务器、存储、应用程序和服务)进行方
+      便的、按需的网络访问，可以用最少的管理工作或服务
+      提供商交互来快速地提供和发布这些资源。这种云模式
+      提高了可用性，它由5个基本特征、3个服务模型和4个部
+      署模型组成。
+2.云计算有哪些特点？
+      超大规模、虚拟化、高可靠性、通用性、高可伸缩性、按需服务、极其廉价
+3.云计算按照服务类型可以分为哪几类？
+       将软件作为服务：针对性更强，它将某些特定应用软件功能封装成服务。
+       将平台作为服务：对资源的抽象层次更进一步，提供用户应用程序运行环境。
+       将硬件设备等基础资源封装成服务供用户使用。
+4.云计算技术体系结构可以分为哪几层？
+      应用层、平台层、资源层、用户访问层、管理层
+5.查阅关于国际、国内云计算厂商发展状况。
+     AWS、微软Azure、阿里云、Google、IBM 占据了2017 年全球公有云IaaS 市场     份额的前五名，且增长率均超过了25%，而其他厂商的整体增长率只有8%。国内     市场，据中国信息通信研究院的可信云评估数据显示，阿里云、腾讯云、中国电信     、金山云、UCloud、中国联通、中国移动等云服务商占据了国内大部分IaaS 市场     份额，并且领先优势还在不断扩大。
